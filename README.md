@@ -27,80 +27,89 @@ Desenvolver as funcionalidades conforme requisitos
 - [CT005] Altere pelo menos dois emprestimos preenchendo a **devolucao** com data 4 dias maior que a retirada para testar o cálculo da **multa**.
 
 ## Tecnologias
-Node.js
+# 📚 API Biblioteca Acme
 
-Prisma (para banco de dados)
+Uma API para gerenciamento de alunos, livros e empréstimos.
 
-Express (para criar a API)
+## 🚀 Tecnologias Utilizadas
 
-MySQL (banco de dados)
-## Passo a Passo de como executar a API
-🚀 Instalação
-Clone o repositório:
+- **Node.js** - Ambiente de execução JavaScript
+- **Prisma** - ORM para interagir com o banco de dados
+- **Express** - Framework para criação da API
+- **MySQL** - Banco de dados relacional
 
-bash
-Copy
+---
+
+## 📌 Passo a Passo para Execução
+
+### 1️⃣ Clonar o Repositório
+```bash
 git clone https://github.com/seu-usuario/biblioteca-acme.git
 cd biblioteca-acme/api
-Instale as dependências:
+```
 
-bash
-Copy
+### 2️⃣ Instalar as Dependências
+```bash
 npm install
-Configure o ambiente:
+```
 
-bash
-Copy
+### 3️⃣ Configurar o Ambiente
+```bash
 cp .env.example .env
-Edite o arquivo .env com suas credenciais do MySQL.
+```
+Edite o arquivo `.env` com suas credenciais do MySQL.
 
-Execute as migrações do banco:
-
-bash
-Copy
+### 4️⃣ Executar as Migrações do Banco
+```bash
 npx prisma migrate dev --name init
-Inicie o servidor:
+```
 
-bash
-Copy
+### 5️⃣ Iniciar o Servidor
+```bash
 npm start
-🔧 Endpoints Principais
-Alunos
-POST /alunos - Cadastra novo aluno
+```
+A API estará disponível em: **http://localhost:3000**
 
-GET /alunos - Lista todos os alunos
+---
 
-GET /alunos/:ra - Busca aluno específico
+## 🔧 Endpoints Principais
 
-Livros
-POST /livros - Cadastra novo livro
+### 📌 Alunos
+- **POST /alunos** - Cadastra um novo aluno
+- **GET /alunos** - Lista todos os alunos
+- **GET /alunos/:ra** - Busca um aluno específico pelo RA
 
-GET /livros - Lista todos os livros
+### 📖 Livros
+- **POST /livros** - Cadastra um novo livro
+- **GET /livros** - Lista todos os livros
 
-Empréstimos
-POST /emprestimos - Registra novo empréstimo
+### 🔄 Empréstimos
+- **POST /emprestimos** - Registra um novo empréstimo
+- **PUT /emprestimos/:id** - Atualiza um empréstimo
+- **GET /emprestimos/:id/multa** - Calcula multa por atraso
 
-PUT /emprestimos/:id - Atualiza empréstimo
+---
 
-GET /emprestimos/:id/multa - Calcula multa por atraso
+## 📌 Exemplo de Uso
 
-📌 Exemplo de Uso
-Cadastrar aluno:
-
-bash
-Copy
+### Cadastrar um Aluno
+```bash
 curl -X POST http://localhost:3000/alunos \
 -H "Content-Type: application/json" \
 -d '{"ra":"20230001","nome":"Maria Silva","telefone":"11999999999"}'
-ℹ️ Mais Informações
-Para visualizar o banco de dados:
+```
 
-bash
-Copy
+---
+
+## ℹ️ Mais Informações
+
+### Visualizar o Banco de Dados
+```bash
 npx prisma studio
-Para reiniciar o banco (cuidado: apaga todos os dados):
+```
 
-bash
-Copy
+### Reiniciar o Banco (⚠️ Apaga todos os dados)
+```bash
 npx prisma migrate reset
-A API estará disponível em http://localhost:3000
+```
+
