@@ -27,119 +27,73 @@ Desenvolver as funcionalidades conforme requisitos
 - [CT005] Altere pelo menos dois emprestimos preenchendo a **devolucao** com data 4 dias maior que a retirada para testar o cálculo da **multa**.
 
 ## Tecnologias
-Biblioteca ACME - API de Gerenciamento de Empréstimos
-📋 Tecnologias Utilizadas
-Node.js (v18+)
+Node.js
 
-Express (Framework web)
+Prisma (para banco de dados)
 
-Prisma (ORM para banco de dados)
+Express (para criar a API)
 
-MySQL (Banco de dados)
-
-Insomnia (Teste de API)
-
-Git (Controle de versão)
-
+MySQL (banco de dados)
 ## Passo a Passo de como executar a API
-Pré-requisitos
-Node.js instalado (v18 ou superior)
-
-MySQL instalado e rodando
-
-Git instalado (opcional)
-
-Insomnia ou Postman para testes
-
-🔧 Configuração Inicial
-Clone o repositório
+Preparação:
 
 bash
 Copy
-git clone https://github.com/seu-usuario/biblioteca-acme.git
+git clone https://github.com/seu-repositorio/biblioteca-acme.git
 cd biblioteca-acme/api
-Instale as dependências
-
-bash
-Copy
 npm install
-Configure o ambiente
+Banco de Dados:
 
-Crie um arquivo .env na raiz do projeto com:
+Crie um arquivo .env com:
 
 Copy
-DATABASE_URL="mysql://usuario:senha@localhost:3306/biblioteca_acme"
-PORT=3000
-Configuração do Banco de Dados
-Aplique as migrações
+DATABASE_URL="mysql://usuario:senha@localhost:3306/biblioteca"
+Rode:
 
 bash
 Copy
-npx prisma migrate dev --name init
-Gere o cliente Prisma
-
-bash
-Copy
-npx prisma generate
-▶️ Executando a API
-Inicie o servidor
+npx prisma migrate dev
+Iniciar:
 
 bash
 Copy
 npm start
-O servidor estará disponível em: http://localhost:3000
+Endpoints Principais
+Alunos
+POST /alunos - Cadastra aluno
 
-Teste os endpoints no Insomnia:
+GET /alunos - Lista alunos
 
-Importe a coleção de requisições (arquivo .json incluso no projeto)
+GET /alunos/RA123 - Mostra um aluno
 
-Casos de Teste
-Execute no Insomnia na ordem:
+Livros
+POST /livros - Cadastra livro
 
-[CT001] Cadastre 5 alunos
+GET /livros - Lista livros
 
-[CT002] Teste CRUD completo de um aluno
+Empréstimos
+POST /emprestimos - Cria empréstimo
 
-[CT003] Cadastre 10 livros
+PUT /emprestimos/1 - Atualiza empréstimo
 
-[CT004] Cadastre empréstimos para cada aluno
+GET /emprestimos/1/multa - Calcula multa
 
-[CT005] Teste cálculo de multa com devoluções atrasadas
+Testando
+Use o Insomnia ou Postman
 
-Estrutura da API
+Primeiro crie alguns alunos e livros
+
+Depois faça empréstimos
+
+Teste a multa com datas atrasadas
+
+Exemplo de aluno:
+
+json
 Copy
-📦 api
-├── 📂 prisma
-│   ├── 📄 schema.prisma       # Definição do schema do banco
-│   └── 📂 migrations          # Migrações do banco
-├── 📂 src
-│   ├── 📂 controllers         # Lógica dos endpoints
-│   ├── 📄 routes.js           # Definição das rotas
-│   └── 📄 server.js           # Configuração do servidor
-├── 📄 .env                    # Variáveis de ambiente
-└── 📄 package.json            # Dependências do projeto
-🔍 Documentação dos Endpoints
-Método	Endpoint	Descrição
-POST	/alunos	Cadastra novo aluno
-GET	/alunos	Lista todos os alunos
-GET	/alunos/{ra}	Busca aluno específico
-PUT	/alunos/{ra}	Atualiza dados do aluno
-DELETE	/alunos/{ra}	Remove um aluno
-Documentação completa disponível no arquivo API_DOCS.md
+{
+  "ra": "RA123",
+  "nome": "João Silva",
+  "telefone": "11999999999"
+}
 
-🛠 Comandos Úteis
-Resetar banco de dados (cuidado: apaga todos os dados)
-
-bash
-Copy
-npx prisma migrate reset
-Abrir interface do Prisma Studio
-
-bash
-Copy
-npx prisma studio
-Verificar status do banco
-
-bash
-Copy
-npx prisma migrate status
