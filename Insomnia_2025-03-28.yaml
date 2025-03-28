@@ -1,0 +1,416 @@
+type: collection.insomnia.rest/5.0
+name: pbe2-vps01-biblioteca-2025-main
+meta:
+  id: wrk_a484e361abd047968be4b4be9b378a7e
+  created: 1743172970542
+  modified: 1743172970542
+collection:
+  - name: Biblioteca
+    meta:
+      id: fld_2a37caa9f7824a37b46da5a144013b74
+      created: 1743173025610
+      modified: 1743180043240
+      sortKey: -1743173025610
+    children:
+      - name: Aluno
+        meta:
+          id: fld_220b0a51690d459b95f8815594153bde
+          created: 1743172990539
+          modified: 1743173039289
+          sortKey: -1743173037103
+        children:
+          - url: http://localhost:3001/alunos/20230002
+            name: REMOVE
+            meta:
+              id: req_31a2f1b3caf74e0f9f9db37ef72be7b4
+              created: 1743176658818
+              modified: 1743178913331
+              isPrivate: false
+              sortKey: -1743176658818
+            method: DELETE
+            headers:
+              - name: User-Agent
+                value: insomnia/11.0.1
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3001/alunos/20230001
+            name: UPDATE
+            meta:
+              id: req_121ae8683d6d4ffd9603638e2125ac0e
+              created: 1743176666185
+              modified: 1743178870978
+              isPrivate: false
+              sortKey: -1743176666185
+            method: PUT
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                	"ra": "20230001",
+                	"nome": "João Silva",
+                	"telefone": "11987623321"
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/11.0.1
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3001/alunos/20230001
+            name: READONE
+            meta:
+              id: req_5255f040c0d5496daf7ebc0c3fefeb37
+              created: 1743176668275
+              modified: 1743178816530
+              isPrivate: false
+              sortKey: -1743176668275
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/11.0.1
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3001/alunos
+            name: READ
+            meta:
+              id: req_56c5f1448eeb4c40b32d4930d04f9cc2
+              created: 1743176670417
+              modified: 1743178780925
+              isPrivate: false
+              sortKey: -1743176670417
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/11.0.1
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3001/alunos
+            name: CREATE
+            meta:
+              id: req_0cad7dd3e368432c97d5aa7e85f54647
+              created: 1743176672790
+              modified: 1743178767107
+              isPrivate: false
+              sortKey: -1743176672790
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-2
+                  {
+                    "ra": "20230005",
+                    "nome": "Pedro Henrique Santos",
+                    "telefone": "81966554433"
+                  }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/11.0.1
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: Emprestimo
+        meta:
+          id: fld_5833ef0a4bc241529ace494338b423c4
+          created: 1743172999526
+          modified: 1743173037029
+          sortKey: -1743173037003
+        children:
+          - url: http://localhost:3001/emprestimo/3
+            name: REMOVE
+            meta:
+              id: req_51ba78e39a5e4819a9c615fe61303938
+              created: 1743176703265
+              modified: 1743179832272
+              isPrivate: false
+              sortKey: -1743176703265
+            method: DELETE
+            headers:
+              - name: User-Agent
+                value: insomnia/11.0.1
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3001/emprestimo/1
+            name: UPDATE
+            meta:
+              id: req_a622b18416f74e5eb2163db3c29defc1
+              created: 1743176705610
+              modified: 1743181304957
+              isPrivate: false
+              sortKey: -1743176705610
+            method: PUT
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                  "devolucao": "2023-10-07T14:30:00Z" 
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/11.0.1
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3001/emprestimo/1/multa
+            name: READONE
+            meta:
+              id: req_ef9b97d55cc54adb961f90f773ef713f
+              created: 1743176707435
+              modified: 1743185481788
+              isPrivate: false
+              sortKey: -1743176707435
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/11.0.1
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3001/emprestimo
+            name: READ
+            meta:
+              id: req_e957cd6ab3cc491895aeae7a8e61ad7a
+              created: 1743176708871
+              modified: 1743185449805
+              isPrivate: false
+              sortKey: -1743176708871
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/11.0.1
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3001/emprestimo
+            name: CREATE
+            meta:
+              id: req_8774745910b14650af16038f146d31b6
+              created: 1743176710371
+              modified: 1743179692925
+              isPrivate: false
+              sortKey: -1743176710371
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                  "retirada": "2023-10-07T10:00:00Z",
+                  "devolucao": "2023-10-21T10:00:00Z",
+                  "alunoRa": "20230004",
+                  "livroId": 7
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/11.0.1
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: Livro
+        meta:
+          id: fld_a098272a84c94a97a9acb233d2076c75
+          created: 1743173007646
+          modified: 1743180270573
+          sortKey: -1743173037203
+        children:
+          - name: REMOVE
+            meta:
+              id: req_40a79786c75044bebaafabb9579cc4ea
+              created: 1743173097428
+              modified: 1743176777372
+              isPrivate: false
+              sortKey: -1743173097428
+            method: DELETE
+            headers:
+              - name: User-Agent
+                value: insomnia/11.0.1
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3000/emprestimos/1
+            name: UPDATE
+            meta:
+              id: req_4fd9c43db1c1490780291ffa6b8c5ee3
+              created: 1743173100658
+              modified: 1743180112591
+              isPrivate: false
+              sortKey: -1743173100658
+            method: PUT
+            headers:
+              - name: User-Agent
+                value: insomnia/11.0.1
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3000/
+            name: READONE
+            meta:
+              id: req_d60f2d4b708247f98e93ab318b4071fc
+              created: 1743173102286
+              modified: 1743185352068
+              isPrivate: false
+              sortKey: -1743173102286
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/11.0.1
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3001/livro
+            name: READ
+            meta:
+              id: req_96dd6ef48ec548ce895ead3bd9b24308
+              created: 1743173104138
+              modified: 1743185357034
+              isPrivate: false
+              sortKey: -1743173104138
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/11.0.1
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3001/livro
+            name: CREATE
+            meta:
+              id: req_ec69151cef834cf0910fcbc03e344090
+              created: 1743173106262
+              modified: 1743179226869
+              isPrivate: false
+              sortKey: -1743173106262
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                    "titulo": "Crime e Castigo",
+                    "autor": "Fiódor Dostoiévski",
+                    "prateleira": "LIT-RUS-010"
+                  }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/11.0.1
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - url: http://localhost:3001
+        name: New Request
+        meta:
+          id: req_98f35ebd2bd54e6189d3f157a7280b63
+          created: 1743172983110
+          modified: 1743173082810
+          isPrivate: false
+          sortKey: -1743173037303
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.1
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_1ac887d5475a5fcd4f857702f0a36a1f235432e3
+    created: 1743172970562
+    modified: 1743172970562
+environments:
+  name: Base Environment
+  meta:
+    id: env_1ac887d5475a5fcd4f857702f0a36a1f235432e3
+    created: 1743172970550
+    modified: 1743172970550
+    isPrivate: false
