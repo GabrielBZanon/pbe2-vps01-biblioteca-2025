@@ -35,65 +35,72 @@ Express (para criar a API)
 
 MySQL (banco de dados)
 ## Passo a Passo de como executar a API
-Preparação:
+🚀 Instalação
+Clone o repositório:
 
 bash
 Copy
-git clone https://github.com/seu-repositorio/biblioteca-acme.git
+git clone https://github.com/seu-usuario/biblioteca-acme.git
 cd biblioteca-acme/api
-npm install
-Banco de Dados:
-
-Crie um arquivo .env com:
-
-Copy
-DATABASE_URL="mysql://usuario:senha@localhost:3306/biblioteca"
-Rode:
+Instale as dependências:
 
 bash
 Copy
-npx prisma migrate dev
-Iniciar:
+npm install
+Configure o ambiente:
+
+bash
+Copy
+cp .env.example .env
+Edite o arquivo .env com suas credenciais do MySQL.
+
+Execute as migrações do banco:
+
+bash
+Copy
+npx prisma migrate dev --name init
+Inicie o servidor:
 
 bash
 Copy
 npm start
-Endpoints Principais
+🔧 Endpoints Principais
 Alunos
-POST /alunos - Cadastra aluno
+POST /alunos - Cadastra novo aluno
 
-GET /alunos - Lista alunos
+GET /alunos - Lista todos os alunos
 
-GET /alunos/RA123 - Mostra um aluno
+GET /alunos/:ra - Busca aluno específico
 
 Livros
-POST /livros - Cadastra livro
+POST /livros - Cadastra novo livro
 
-GET /livros - Lista livros
+GET /livros - Lista todos os livros
 
 Empréstimos
-POST /emprestimos - Cria empréstimo
+POST /emprestimos - Registra novo empréstimo
 
-PUT /emprestimos/1 - Atualiza empréstimo
+PUT /emprestimos/:id - Atualiza empréstimo
 
-GET /emprestimos/1/multa - Calcula multa
+GET /emprestimos/:id/multa - Calcula multa por atraso
 
-Testando
-Use o Insomnia ou Postman
+📌 Exemplo de Uso
+Cadastrar aluno:
 
-Primeiro crie alguns alunos e livros
-
-Depois faça empréstimos
-
-Teste a multa com datas atrasadas
-
-Exemplo de aluno:
-
-json
+bash
 Copy
-{
-  "ra": "RA123",
-  "nome": "João Silva",
-  "telefone": "11999999999"
-}
+curl -X POST http://localhost:3000/alunos \
+-H "Content-Type: application/json" \
+-d '{"ra":"20230001","nome":"Maria Silva","telefone":"11999999999"}'
+ℹ️ Mais Informações
+Para visualizar o banco de dados:
 
+bash
+Copy
+npx prisma studio
+Para reiniciar o banco (cuidado: apaga todos os dados):
+
+bash
+Copy
+npx prisma migrate reset
+A API estará disponível em http://localhost:3000
